@@ -590,8 +590,8 @@ function SmartHomeBIM({ deviceStates, onToggleDevice, viewMode, showGrid, showDi
               metalness={0.7}
             />
           </mesh>
-          <mesh position={[0.4, 0, 0.06]}>
-            <cylinderGeometry args={[0.05, 0.05, 0.3, 16]} rotation={[Math.PI / 2, 0, 0]} />
+          <mesh position={[0.4, 0, 0.06]} rotation={[Math.PI / 2, 0, 0]}>
+            <cylinderGeometry args={[0.05, 0.05, 0.3, 16]}  />
             <meshStandardMaterial 
               color={deviceStates.doorLock ? "#10b981" : "#ef4444"}
               emissive={deviceStates.doorLock ? "#10b981" : "#ef4444"}
@@ -704,8 +704,8 @@ function SmartHomeBIM({ deviceStates, onToggleDevice, viewMode, showGrid, showDi
             <meshStandardMaterial color="#e2e8f0" roughness={0.3} metalness={0.4} />
           </mesh>
           <Rotator speed={8} active={deviceStates.ac} axis="z">
-            <mesh position={[0, 0, 0.16]}>
-              <cylinderGeometry args={[0.15, 0.15, 0.05, 16]} rotation={[Math.PI / 2, 0, 0]} />
+            <mesh position={[0, 0, 0.16]} rotation={[Math.PI / 2, 0, 0]}>
+              <cylinderGeometry args={[0.15, 0.15, 0.05, 16]}  />
               <meshStandardMaterial color="#1e293b" metalness={0.7} />
             </mesh>
           </Rotator>
@@ -1281,8 +1281,8 @@ function IndustrialBIM({ deviceStates, onToggleDevice, viewMode, showGrid, showD
             />
           </mesh>
           {/* Pressure gauge */}
-          <mesh position={[1.51, 1, 0]}>
-            <cylinderGeometry args={[0.2, 0.2, 0.05, 16]} rotation={[0, 0, Math.PI / 2]} />
+          <mesh position={[1.51, 1, 0]} rotation={[0, 0, Math.PI / 2]}>
+            <cylinderGeometry args={[0.2, 0.2, 0.05, 16]}  />
             <meshStandardMaterial color="#fbbf24" metalness={0.8} />
           </mesh>
           {/* Piping */}
