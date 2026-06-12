@@ -5,7 +5,7 @@ import DeepDive from "@/components/sections/DeepDive";
 import Security from "@/components/sections/Security";
 import Gallery from "@/components/sections/Gallery";
 import Contact from "@/components/sections/Contact";
-import IoTProductShowcase from "@/components/showcase/IoTProductShowcase";
+import IoTProductShowcase from "@/components/Showcase/IoTProductShowcase";
 import ProductShowcase from "@/components/sections/ProductShowCase";
 export default function Home() {  
   return (
