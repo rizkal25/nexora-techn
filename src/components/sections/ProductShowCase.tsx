@@ -326,7 +326,7 @@ function SpecsTab({ product }: { product: any }) {
             <Cpu className="w-4 h-4 text-blue-400" /> {category}
           </h4>
           <div className="bg-slate-800 rounded-lg border border-slate-700 overflow-hidden p-3">
-            {typeof data === "object" && !Array.isArray(data) ? (
+            {typeof data === "object" && data !== null && !Array.isArray(data) ? (
               Object.entries(data).map(([key, value]) => (
                 <div key={key} className="flex justify-between items-center py-1.5 border-b border-slate-700 last:border-b-0">
                   <span className="text-xs text-slate-400 capitalize">{key}</span>
