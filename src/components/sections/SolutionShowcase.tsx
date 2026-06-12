@@ -1,172 +1,206 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { LucideIcon } from "lucide-react";
+import {
+  Cpu,
+  Home,
+  Server,
+  Database,
+  Smartphone,
+  FileText,
+  Activity,
+  Shield,
+} from "lucide-react";
+import TopologyNode from "../ui/TopologyNode";
+import ParticleFlow from "../ui/ParticleFlow";
+import PhoneMockup from "../Showcase/PhoneMockup";
+import AnimatedEnergyChart from "../Showcase/AnimatedEnergyChart";
+import SmartAutomation from "../Showcase/SmartAutomation";
+import SecurityGrid from "../Showcase/SecurityGrid";
+import ReportPreview from "../Showcase/ReportPreview";
+import DatabaseViz from "../Showcase/DatabaseViz";
 
-// 1. Define a strict union type for the allowed colors
-type NodeColor = "blue" | "emerald" | "purple" | "amber" | "rose";
-
-interface TopologyNodeProps {
-  icon: LucideIcon;
-  label: string;
-  sublabel: string;
-  delay: number;
-  // 2. Use the union type for the color prop
-  color?: NodeColor;
-  tooltip?: string;
-  pulseAnimation?: boolean;
-  mqttAnimation?: boolean;
-  processingAnimation?: boolean;
-  dataStreamAnimation?: boolean;
-  notificationAnimation?: boolean;
-}
-
-export default function TopologyNode({
-  icon: Icon,
-  label,
-  sublabel,
-  delay,
-  color = "blue",
-  tooltip,
-  pulseAnimation = false,
-  mqttAnimation = false,
-  processingAnimation = false,
-  dataStreamAnimation = false,
-  notificationAnimation = false,
-}: TopologyNodeProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  // 3. Explicitly type the colorClasses object using Record<NodeColor, string>
-  const colorClasses: Record<NodeColor, string> = {
-    blue: "text-blue-400 border-blue-500/50 shadow-blue-500/30",
-    emerald: "text-emerald-400 border-emerald-500/50 shadow-emerald-500/30",
-    purple: "text-purple-400 border-purple-500/50 shadow-purple-500/30",
-    amber: "text-amber-400 border-amber-500/50 shadow-amber-500/30",
-    rose: "text-rose-400 border-rose-500/50 shadow-rose-500/30",
-  };
-
+export default function SolutionShowcase() {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.6, type: "spring", stiffness: 100 }}
-      className="relative z-10 flex flex-col items-center text-center group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {/* Tooltip */}
-      {tooltip && (
+    <section id="solusi" className="py-24 bg-slate-950 relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
-          className="absolute -top-16 left-1/2 -translate-x-1/2 px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-slate-300 whitespace-nowrap z-50 pointer-events-none"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          {tooltip}
-          <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-slate-800 border-r border-b border-slate-700 rotate-45 -mt-1" />
+          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">
+            Arsitektur{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+              End-to-End
+            </span>
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            Dari sensor di lapangan hingga laporan di genggaman Anda. Sistem yang terhubung, aman, dan terotomasi.
+          </p>
         </motion.div>
-      )}
 
-      {/* Icon Container */}
-      <div className="relative">
-        {/* Pulse Animation (Smart MCB) */}
-        {pulseAnimation && (
-          <>
-            <motion.div
-              className={`absolute inset-0 rounded-2xl border-2 ${colorClasses[color].split(' ')[1]}`}
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.5, 0, 0.5],
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        {/* 1. TOPOLOGY ANIMATION */}
+        <div className="relative max-w-5xl mx-auto mb-24 py-8">
+          <ParticleFlow />
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-4 relative z-10">
+            <TopologyNode
+              icon={Cpu}
+              label="Smart MCB"
+              sublabel="Edge Device"
+              delay={0.1}
+              color="amber"
+              tooltip="Sensor IoT dengan MQTT protocol"
+              pulseAnimation
             />
-            <motion.div
-              className={`absolute inset-0 rounded-2xl border-2 ${colorClasses[color].split(' ')[1]}`}
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.5, 0, 0.5],
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+            <TopologyNode
+              icon={Home}
+              label="Home Assistant"
+              sublabel="MQTT Hub"
+              delay={0.3}
+              color="emerald"
+              tooltip="Central hub untuk semua device"
+              mqttAnimation
             />
-          </>
-        )}
+            <TopologyNode
+              icon={Server}
+              label="Nexora API"
+              sublabel="Trapezoidal Calc"
+              delay={0.5}
+              color="purple"
+              tooltip="Backend dengan algoritma Trapezoidal"
+              processingAnimation
+            />
+            <TopologyNode
+              icon={Database}
+              label="PostgreSQL"
+              sublabel="Time-series DB"
+              delay={0.7}
+              color="blue"
+              tooltip="Database optimized untuk time-series"
+              dataStreamAnimation
+            />
+            <TopologyNode
+              icon={Smartphone}
+              label="Control App"
+              sublabel="Dashboard & Report"
+              delay={0.9}
+              color="rose"
+              tooltip="Web app responsive + PWA"
+              notificationAnimation
+            />
+          </div>
+        </div>
 
-        {/* MQTT Packet Animation (Home Assistant) */}
-        {mqttAnimation && (
+        {/* 2. BENTO GRID SHOWCASE */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {/* Card 1: Phone Mockup */}
           <motion.div
-            className="absolute -top-2 -right-2 w-3 h-3 bg-emerald-400 rounded-full"
-            animate={{
-              scale: [0, 1, 0],
-              opacity: [0, 1, 0],
-              x: [0, 10, 20],
-              y: [0, -10, -20],
-            }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-          />
-        )}
-
-        {/* Processing Animation (Nexora API) */}
-        {processingAnimation && (
-          <motion.div
-            className="absolute inset-0 rounded-2xl border-2 border-purple-500/50"
-            animate={{
-              rotate: 360,
-            }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            style={{
-              borderStyle: "dashed",
-            }}
-          />
-        )}
-
-        {/* Data Stream Animation (PostgreSQL) */}
-        {dataStreamAnimation && (
-          <>
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                className="absolute top-1/2 -left-4 w-2 h-2 bg-blue-400 rounded-full"
-                animate={{
-                  x: [0, 40],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  delay: i * 0.5,
-                  ease: "easeOut",
-                }}
-              />
-            ))}
-          </>
-        )}
-
-        {/* Notification Animation (Control App) */}
-        {notificationAnimation && (
-          <motion.div
-            className="absolute -top-1 -right-1 w-4 h-4 bg-rose-500 rounded-full flex items-center justify-center"
-            animate={{
-              scale: [1, 1.2, 1],
-            }}
-            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-1 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 flex flex-col items-center justify-center hover:border-blue-500/30 transition-colors"
           >
-            <span className="text-[8px] text-white font-bold">3</span>
+            <div className="flex items-center gap-2 mb-6 w-full justify-center">
+              <FileText className="w-5 h-5 text-purple-400" />
+              <h3 className="font-bold text-white">6 Halaman Utama</h3>
+            </div>
+            <PhoneMockup />
+            <p className="text-xs text-slate-500 text-center mt-6">
+              Fully Responsive • Auto-carousel
+            </p>
           </motion.div>
-        )}
 
-        {/* Main Icon Box */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          className={`w-16 h-16 rounded-2xl bg-slate-900 border-2 border-slate-700 flex items-center justify-center mb-3 group-hover:${colorClasses[color].split(' ')[1]} group-hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300`}
-        >
-          <Icon className={`w-8 h-8 ${colorClasses[color].split(' ')[0]}`} />
-        </motion.div>
+          {/* Card 2: Energy Monitoring */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 transition-colors"
+          >
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center gap-2">
+                <Activity className="w-5 h-5 text-blue-400" />
+                <h3 className="font-bold text-white">Real-time Energy Monitoring</h3>
+              </div>
+              <span className="text-xs px-2 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Live
+              </span>
+            </div>
+            <p className="text-sm text-slate-400 mb-4">
+              Visualisasi daya dengan interpolasi Trapezoidal untuk akurasi 99.9%.
+            </p>
+            <AnimatedEnergyChart />
+          </motion.div>
+
+          {/* Card 3: Smart Automation */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="lg:col-span-1 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Shield className="w-5 h-5 text-amber-400" />
+              <h3 className="font-bold text-white">Otomasi Cerdas</h3>
+            </div>
+            <SmartAutomation />
+          </motion.div>
+
+          {/* Card 4: Security Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Shield className="w-5 h-5 text-emerald-400" />
+              <h3 className="font-bold text-white">Enterprise-Grade Security</h3>
+            </div>
+            <SecurityGrid />
+          </motion.div>
+
+          {/* Card 5: Report Preview */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <FileText className="w-5 h-5 text-purple-400" />
+              <h3 className="font-bold text-white">Automated A4 Engineering Report</h3>
+            </div>
+            <ReportPreview />
+          </motion.div>
+
+          {/* Card 6: Database Viz */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/30 transition-colors"
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Database className="w-5 h-5 text-blue-400" />
+              <h3 className="font-bold text-white">High-Performance Data Layer</h3>
+            </div>
+            <DatabaseViz />
+          </motion.div>
+        </div>
       </div>
-
-      {/* Label */}
-      <h4 className="text-sm font-bold text-white mt-2">{label}</h4>
-      <p className="text-xs text-slate-500 mt-1">{sublabel}</p>
-    </motion.div>
+    </section>
   );
 }
