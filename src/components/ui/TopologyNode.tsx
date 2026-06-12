@@ -33,7 +33,8 @@ export default function TopologyNode({
 }: TopologyNodeProps) {
   const [isHovered, setIsHovered] = useState(false);
 
-  const colorClasses = {
+  // FIX: Explicitly type as Record<string, string> to allow indexing with the 'color' string
+  const colorClasses: Record<string, string> = {
     blue: "text-blue-400 border-blue-500/50 shadow-blue-500/30",
     emerald: "text-emerald-400 border-emerald-500/50 shadow-emerald-500/30",
     purple: "text-purple-400 border-purple-500/50 shadow-purple-500/30",
