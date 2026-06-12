@@ -35,7 +35,7 @@ export async function sendSupportTicketEmail(data: SupportTicketData) {
     const { data: emailData, error } = await resend.emails.send({
       from: "Nexora Support <onboarding@resend.dev>",
       to: [destinationEmail],
-      replyTo: data.email,
+      reply_to: data.email,
       subject: `[${data.ticketNumber}] ${data.priority.toUpperCase()} - ${data.subject}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
