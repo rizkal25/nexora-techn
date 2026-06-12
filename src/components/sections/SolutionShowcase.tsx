@@ -13,12 +13,12 @@ import {
 } from "lucide-react";
 import TopologyNode from "../ui/TopologyNode";
 import ParticleFlow from "../ui/ParticleFlow";
-import PhoneMockup from "../showcase/PhoneMockup";
-import AnimatedEnergyChart from "../showcase/AnimatedEnergyChart";
-import SmartAutomation from "../showcase/SmartAutomation";
-import SecurityGrid from "../showcase/SecurityGrid";
-import ReportPreview from "../showcase/ReportPreview";
-import DatabaseViz from "../showcase/DatabaseViz";
+import PhoneMockup from "../Showcase/PhoneMockup";
+import AnimatedEnergyChart from "../Showcase/AnimatedEnergyChart";
+import SmartAutomation from "../Showcase/SmartAutomation";
+import SecurityGrid from "../Showcase/SecurityGrid";
+import ReportPreview from "../Showcase/ReportPreview";
+import DatabaseViz from "../Showcase/DatabaseViz";
 
 export default function SolutionShowcase() {
   return (
