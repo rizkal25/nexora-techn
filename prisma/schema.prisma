@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// MODEL BARU UNTUK SUPPORT TICKET
+model SupportTicket {
+  id          String   @id @default(cuid())
+  ticketNumber String  @unique // Format: NXR-XXXXX
+  name        String
+  email       String
+  category    String   // technical, billing, integration, hardware, account, feature
+  priority    String   @default("medium") // low, medium, high, critical
+  subject     String
+  description String
+  status      String   @default("open") // open, in_progress, resolved, closed
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

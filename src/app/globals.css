@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020617; /* slate-950 */
+  --foreground: #f8fafc; /* slate-50 */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar untuk tema gelap */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a; /* slate-900 */
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; /* slate-700 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569; /* slate-600 */
+}
+
+/* Utility untuk gradient text */
+.text-gradient {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500;
+}
