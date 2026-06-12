@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     const { data: emailData, error } = await resend.emails.send({
       from: "Nexora Demo <onboarding@resend.dev>",
       to: [destinationEmail],
-      replyTo: validatedData.email,
+      reply_to: validatedData.email,
       subject: `🎯 Request Demo Baru dari ${validatedData.name}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
