@@ -15,7 +15,7 @@ export default function ProblemSolution() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Mengapa <span className="text-gradient">Nexora</span> Dibuat?
+            Mengapa <span className="text-gradient">Arvana</span> Dibuat?
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
             Mengatasi blind spot pada sistem monitoring energi konvensional dengan pendekatan engineering yang presisi.
@@ -65,7 +65,7 @@ export default function ProblemSolution() {
               <div className="p-3 bg-emerald-500/20 rounded-lg">
                 <CheckCircle2 className="w-6 h-6 text-emerald-400" />
               </div>
-              <h3 className="text-xl font-bold text-emerald-200">The Nexora Solution</h3>
+              <h3 className="text-xl font-bold text-emerald-200">The Arvana Solution</h3>
             </div>
             <ul className="space-y-4 text-slate-300">
               <li className="flex items-start gap-3">
