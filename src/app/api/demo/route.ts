@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const destinationEmail = process.env.CONTACT_EMAIL_DESTINATION || "rizkaldwip@gmail.com";
     
     const { data: emailData, error } = await resend.emails.send({
-      from: "Nexora Demo <onboarding@resend.dev>",
+      from: "Arvana Demo <onboarding@resend.dev>", // Diubah menjadi Arvana
       to: [destinationEmail],
       reply_to: validatedData.email,
       subject: `🎯 Request Demo Baru dari ${validatedData.name}`,
@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
                 ⏰ Segera hubungi calon klien ini untuk konfirmasi jadwal demo.
               </p>
               <p style="color: #94a3b8; font-size: 11px; margin: 8px 0 0 0;">
-                Dikirim melalui Nexora Demo Scheduling System
+                Dikirim melalui Arvana Demo Scheduling System
               </p>
             </div>
           </div>
