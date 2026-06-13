@@ -6,7 +6,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog & Artikel - Nexora Techn",
+  title: "Blog & Artikel - Arvana",
   description: "Artikel, tutorial, case study, dan insight terbaru seputar IoT, smart home, dan monitoring energi.",
 };
 
@@ -35,7 +35,7 @@ export default function BlogPage() {
     },
     {
       title: "Keamanan IoT: 7 Praktik Terbaik untuk Melindungi Device Anda dari Serangan Cyber",
-      excerpt: "Device IoT sering menjadi target serangan cyber. Pelajari 7 praktik terbaik yang kami terapkan di Nexora untuk menjaga keamanan data Anda.",
+      excerpt: "Device IoT sering menjadi target serangan cyber. Pelajari 7 praktik terbaik yang kami terapkan di Arvana untuk menjaga keamanan data Anda.",
       author: "Rudi Hartono",
       date: "2 Juni 2026",
       readTime: "10 min read",
@@ -44,8 +44,8 @@ export default function BlogPage() {
       gradient: "from-red-500 to-orange-500",
     },
     {
-      title: "Case Study: Penghematan 30% Energi di Gedung Perkantoran dengan Nexora IoT",
-      excerpt: "Bagaimana sebuah perusahaan di Jakarta berhasil menghemat 30% konsumsi energi setelah mengimplementasikan sistem monitoring Nexora.",
+      title: "Case Study: Penghematan 30% Energi di Gedung Perkantoran dengan Arvana IoT",
+      excerpt: "Bagaimana sebuah perusahaan di Jakarta berhasil menghemat 30% konsumsi energi setelah mengimplementasikan sistem monitoring Arvana.",
       author: "Budi Santoso",
       date: "28 Mei 2026",
       readTime: "15 min read",
@@ -64,8 +64,8 @@ export default function BlogPage() {
       gradient: "from-amber-500 to-orange-500",
     },
     {
-      title: "Integrasi Home Assistant dengan Nexora: Panduan Lengkap untuk Pemula",
-      excerpt: "Langkah demi langkah menghubungkan device Nexora Anda dengan Home Assistant untuk otomasi yang lebih powerful dan fleksibel.",
+      title: "Integrasi Home Assistant dengan Arvana: Panduan Lengkap untuk Pemula",
+      excerpt: "Langkah demi langkah menghubungkan device Arvana Anda dengan Home Assistant untuk otomasi yang lebih powerful dan fleksibel.",
       author: "Siti Nurhaliza",
       date: "20 Mei 2026",
       readTime: "11 min read",
@@ -109,7 +109,7 @@ export default function BlogPage() {
           </h1>
           <p className="text-lg text-slate-400 leading-relaxed max-w-3xl">
             Tutorial, case study, dan insight terbaru seputar IoT, smart home, monitoring energi, 
-            dan teknologi terkini dari tim Nexora Techn.
+            dan teknologi terkini dari tim Arvana.
           </p>
         </div>
 
