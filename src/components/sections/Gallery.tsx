@@ -117,7 +117,7 @@ export default function Gallery() {
             Live Preview & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Gallery</span>
           </h2>
           <p className="text-slate-400 max-w-3xl mx-auto text-lg">
-            Visualisasi interaktif dari setiap fitur critical sistem Nexora MCB IoT
+            Visualisasi interaktif dari setiap fitur critical sistem Arvana MCB IoT
           </p>
         </motion.div>
 
@@ -273,7 +273,7 @@ function ReportPreview() {
         <div className="border-b-2 border-slate-900 pb-1 mb-1">
           <div className="flex justify-between items-center">
             <div>
-              <div className="text-[6px] font-bold text-slate-900">PT NEXORA</div>
+              <div className="text-[6px] font-bold text-slate-900">Arvana Digital Nusantara</div>
               <div className="text-[5px] text-slate-600">Engineering</div>
             </div>
             <div className="text-right">
@@ -346,7 +346,7 @@ function SmartphonePreview() {
         {/* Screen */}
         <div className="pt-3 px-1.5 pb-1 h-full bg-gradient-to-br from-slate-950 to-slate-900">
           {/* Header */}
-          <div className="text-[5px] font-bold text-white mb-1">Nexora</div>
+          <div className="text-[5px] font-bold text-white mb-1">Arvana</div>
           
           {/* Device Cards */}
           <div className="space-y-1">
