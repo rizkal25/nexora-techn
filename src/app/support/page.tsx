@@ -92,10 +92,10 @@ export default function SupportPage() {
         setShowChatModal(true);
         break;
       case "email":
-        window.location.href = "mailto:support@nexora-iot.com?subject=Support Request";
+        window.location.href = "mailto:support@arvana-iot.com?subject=Support Request";
         break;
       case "whatsapp":
-        window.open("https://wa.me/6281234567890?text=Halo%20Nexora%20Support,%20saya%20butuh%20bantuan", "_blank");
+        window.open("https://wa.me/6281234567890?text=Halo%20Arvana%20Support,%20saya%20butuh%20bantuan", "_blank");
         break;
       case "ticket":
         document.getElementById("ticket-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -518,7 +518,7 @@ export default function SupportPage() {
                     <LifeBuoy className="w-4 h-4 text-white" />
                   </div>
                   <div className="bg-slate-800 rounded-2xl rounded-tl-none p-3 text-sm text-slate-200 max-w-[80%]">
-                    Halo! 👋 Selamat datang di Nexora Support. Ada yang bisa kami bantu?
+                    Halo! 👋 Selamat datang di Arvana Support. Ada yang bisa kami bantu?
                   </div>
                 </div>
 
