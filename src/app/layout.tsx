@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nexora IoT | Enterprise MCB Monitoring & Control",
+  title: "arvana IoT | Enterprise MCB Monitoring & Control",
   description: "Sistem monitoring dan kontrol MCB berbasis IoT enterprise-grade dengan algoritma Trapezoidal Rule untuk akurasi energi tinggi.",
 };
 
