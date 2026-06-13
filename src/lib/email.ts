@@ -8,7 +8,7 @@ export async function sendContactEmail(data: { name: string; email: string; mess
 
   try {
     const { data: emailData, error } = await resend.emails.send({
-      from: "Nexora Portfolio <onboarding@resend.dev>", // Ganti dengan domain Anda jika sudah diverifikasi di Resend
+      from: "arvana Portfolio <onboarding@resend.dev>", // Ganti dengan domain Anda jika sudah diverifikasi di Resend
       to: [destinationEmail],
       subject: `Pesan Baru dari Portfolio: ${data.name}`,
       html: `
@@ -21,7 +21,7 @@ export async function sendContactEmail(data: { name: string; email: string; mess
             ${data.message.replace(/\n/g, "<br>")}
           </div>
           <p style="margin-top: 20px; font-size: 12px; color: #64748b;">
-            Dikirim melalui Nexora MCB IoT Portfolio Website
+            Dikirim melalui Arvana MCB IoT Portfolio Website
           </p>
         </div>
       `,
