@@ -3,8 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kebijakan Privasi - Nexora Techn",
-  description: "Kebijakan privasi Nexora Techn. Pelajari bagaimana kami melindungi data pribadi Anda.",
+  title: "Kebijakan Privasi - Arvana",
+  description: "Kebijakan privasi Arvana. Pelajari bagaimana kami melindungi data pribadi Anda.",
 };
 
 export default function PrivacyPage() {
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             Terakhir diperbarui: <span className="text-white font-medium">{lastUpdated}</span>
           </p>
           <p className="text-slate-400 leading-relaxed">
-            Di Nexora Techn, kami berkomitmen untuk melindungi privasi dan keamanan data pribadi Anda. 
+            Di Arvana, kami berkomitmen untuk melindungi privasi dan keamanan data pribadi Anda. 
             Kebijakan ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda.
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function PrivacyPage() {
             <div className="pl-12 space-y-4 text-slate-400 leading-relaxed">
               <p>Informasi yang kami kumpulkan digunakan untuk:</p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Menyediakan dan memelihara layanan Nexora IoT Platform</li>
+                <li>Menyediakan dan memelihara layanan Arvana IoT Platform</li>
                 <li>Memproses transaksi dan mengirim notifikasi terkait akun</li>
                 <li>Mengirim update produk, tips, dan informasi promosi (dengan persetujuan)</li>
                 <li>Menganalisis penggunaan untuk meningkatkan kualitas layanan</li>
@@ -204,7 +204,7 @@ export default function PrivacyPage() {
                 <li><strong className="text-white">Hak Menolak:</strong> Menolak pemrosesan data untuk tujuan tertentu</li>
                 <li><strong className="text-white">Hak Menarik Persetujuan:</strong> Menarik persetujuan kapan saja</li>
               </ul>
-              <p>Untuk menggunakan hak-hak ini, silakan hubungi kami di <a href="mailto:privacy@nexora-iot.com" className="text-blue-400 hover:underline">privacy@nexora-iot.com</a></p>
+              <p>Untuk menggunakan hak-hak ini, silakan hubungi kami di <a href="mailto:privacy@arvana-iot.com" className="text-blue-400 hover:underline">privacy@arvana-iot.com</a></p>
             </div>
           </section>
 
@@ -248,11 +248,11 @@ export default function PrivacyPage() {
             <div className="pl-12 space-y-4 text-slate-400 leading-relaxed">
               <p>Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau praktik data kami:</p>
               <div className="mt-4 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl">
-                <p className="text-white font-semibold mb-3">Nexora Techn - Privacy Office</p>
+                <p className="text-white font-semibold mb-3">Arvana - Privacy Office</p>
                 <ul className="space-y-2 text-sm">
-                  <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-400" /> privacy@nexora-iot.com</li>
-                  <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-400" /> dpo@nexora-iot.com (Data Protection Officer)</li>
-                  <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-400" /> hello@nexora-iot.com</li>
+                  <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-400" /> privacy@arvana-iot.com</li>
+                  <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-400" /> dpo@arvana-iot.com (Data Protection Officer)</li>
+                  <li className="flex items-center gap-2"><Mail className="w-4 h-4 text-blue-400" /> hello@arvana-iot.com</li>
                 </ul>
               </div>
             </div>
