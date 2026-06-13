@@ -759,7 +759,7 @@ function SmartHomeBIM({ deviceStates, onToggleDevice, viewMode, showGrid, showDi
             </mesh>
             <mesh position={[0, 2, 0]} castShadow>
               <sphereGeometry args={[0.9, 16, 16]} />
-              <meshStandardMaterial color="#14532d" roughness={0.9} />
+              <meshStandardMaterial color="#531414" roughness={0.9} />
             </mesh>
           </group>
         ))}
@@ -1526,7 +1526,7 @@ function SmartphoneMockup({ scene, deviceStates, onToggleDevice }: any) {
               <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
               <span className="text-[8px] font-mono text-cyan-400 tracking-wider">DIGITAL TWIN</span>
             </div>
-            <h3 className="text-base font-bold text-white">Nexora Control</h3>
+            <h3 className="text-base font-bold text-white">Arvana Control</h3>
             <p className="text-[10px] text-slate-400 capitalize">{scene} · Live</p>
           </div>
 
