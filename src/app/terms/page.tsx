@@ -3,8 +3,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Syarat & Ketentuan - Nexora Techn",
-  description: "Syarat dan ketentuan penggunaan layanan Nexora Techn IoT Platform.",
+  title: "Syarat & Ketentuan - Arvana",
+  description: "Syarat dan ketentuan penggunaan layanan Arvana IoT Platform.",
 };
 
 export default function TermsPage() {
@@ -25,7 +25,7 @@ export default function TermsPage() {
             Terakhir diperbarui: <span className="text-white font-medium">{lastUpdated}</span>
           </p>
           <p className="text-slate-400 leading-relaxed">
-            Dengan menggunakan layanan Nexora Techn, Anda menyetujui syarat dan ketentuan berikut. 
+            Dengan menggunakan layanan Arvana, Anda menyetujui syarat dan ketentuan berikut. 
             Harap baca dengan seksama sebelum menggunakan platform kami.
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function TermsPage() {
               <h3 className="text-lg font-bold text-white mb-2">Penting untuk Dibaca</h3>
               <p className="text-sm text-slate-300 leading-relaxed">
                 Dokumen ini merupakan perjanjian hukum yang mengikat antara Anda ("Pengguna") dan 
-                PT Nexora Techn Indonesia ("Perusahaan"). Dengan mendaftar atau menggunakan layanan kami, 
+                PT Arvana Indonesia ("Perusahaan"). Dengan mendaftar atau menggunakan layanan kami, 
                 Anda menyatakan telah membaca, memahami, dan menyetujui seluruh ketentuan di bawah ini.
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function TermsPage() {
               num: "1",
               title: "Penerimaan Ketentuan",
               content: [
-                "Dengan mengakses atau menggunakan layanan Nexora Techn Platform, Anda setuju untuk terikat dengan Syarat & Ketentuan ini.",
+                "Dengan mengakses atau menggunakan layanan Arvana Platform, Anda setuju untuk terikat dengan Syarat & Ketentuan ini.",
                 "Jika Anda tidak setuju dengan bagian manapun dari ketentuan ini, Anda tidak boleh menggunakan layanan kami.",
                 "Kami berhak mengubah ketentuan ini kapan saja. Perubahan akan diberitahukan melalui email atau notifikasi dalam aplikasi.",
               ],
@@ -62,7 +62,7 @@ export default function TermsPage() {
               num: "2",
               title: "Deskripsi Layanan",
               content: [
-                "Nexora Techn menyediakan platform IoT untuk monitoring dan kontrol device listrik (MCB, switch, sensor) melalui aplikasi web dan mobile.",
+                "Arvana menyediakan platform IoT untuk monitoring dan kontrol device listrik (MCB, switch, sensor) melalui aplikasi web dan mobile.",
                 "Layanan mencakup: real-time monitoring, device scheduling, automated reporting, dan analytics.",
                 "Kami berhak memodifikasi, menangguhkan, atau menghentikan layanan sebagian atau seluruhnya dengan pemberitahuan yang wajar.",
               ],
@@ -96,9 +96,9 @@ export default function TermsPage() {
               num: "5",
               title: "Hak Kekayaan Intelektual",
               content: [
-                "Seluruh konten, desain, logo, source code, dan material di platform ini adalah milik Nexora Techn atau pemberi lisensi kami.",
+                "Seluruh konten, desain, logo, source code, dan material di platform ini adalah milik Arvana atau pemberi lisensi kami.",
                 "Anda tidak boleh menyalin, memodifikasi, mendistribusikan, atau membuat karya turunan tanpa izin tertulis.",
-                "Merek dagang, logo, dan nama layanan adalah merek dagang terdaftar dari Nexora Techn.",
+                "Merek dagang, logo, dan nama layanan adalah merek dagang terdaftar dari Arvana.",
                 "Feedback, saran, atau ide yang Anda berikan menjadi milik kami dan dapat digunakan tanpa kompensasi.",
               ],
             },
@@ -196,8 +196,8 @@ export default function TermsPage() {
                 {section.contact && (
                   <div className="mt-4 p-6 bg-slate-900/50 border border-slate-800 rounded-2xl">
                     <ul className="space-y-2 text-sm">
-                      <li className="flex items-center gap-2 text-slate-300"><Mail className="w-4 h-4 text-blue-400" /> legal@nexora-iot.com</li>
-                      <li className="flex items-center gap-2 text-slate-300"><Mail className="w-4 h-4 text-blue-400" /> support@nexora-iot.com</li>
+                      <li className="flex items-center gap-2 text-slate-300"><Mail className="w-4 h-4 text-blue-400" /> legal@arvana-iot.com</li>
+                      <li className="flex items-center gap-2 text-slate-300"><Mail className="w-4 h-4 text-blue-400" /> support@arvana-iot.com</li>
                       <li className="flex items-center gap-2 text-slate-300"><Mail className="w-4 h-4 text-blue-400" /> +62 812 3456 7890</li>
                     </ul>
                   </div>
