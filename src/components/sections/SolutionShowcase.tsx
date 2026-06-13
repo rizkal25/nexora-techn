@@ -69,7 +69,7 @@ export default function SolutionShowcase() {
             />
             <TopologyNode
               icon={Server}
-              label="Nexora API"
+              label="Arvana API"
               sublabel="Trapezoidal Calc"
               delay={0.5}
               color="purple"
