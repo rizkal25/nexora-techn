@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Zap, Menu, X, ChevronRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -65,14 +65,101 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="p-2 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-lg group-hover:shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300">
-              <Zap className="w-5 h-5 text-white" fill="white" />
+          {/* Logo - Arvana Digital Nusantara */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="flex items-center gap-2">
+              {/* Logo SVG - More Accurate */}
+              <svg 
+                width="48" 
+                height="48" 
+                viewBox="0 0 100 100" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="group-hover:scale-105 transition-transform duration-300"
+              >
+                {/* Outer Circle - Navy Blue */}
+                <circle 
+                  cx="50" 
+                  cy="50" 
+                  r="42" 
+                  stroke="#0d2847" 
+                  strokeWidth="3"
+                  fill="none"
+                />
+                
+                {/* Top Compass Point */}
+                <path 
+                  d="M50 8 L54 28 L50 24 L46 28 Z" 
+                  fill="#0d2847"
+                />
+                
+                {/* Bottom Compass Point */}
+                <path 
+                  d="M50 92 L54 72 L50 76 L46 72 Z" 
+                  fill="#0d2847"
+                />
+                
+                {/* Left Compass Point */}
+                <path 
+                  d="M8 50 L28 46 L24 50 L28 54 Z" 
+                  fill="#0d2847"
+                />
+                
+                {/* Right Compass Point */}
+                <path 
+                  d="M92 50 L72 46 L76 50 L72 54 Z" 
+                  fill="#0d2847"
+                />
+                
+                {/* Letter A - Main Shape */}
+                <path 
+                  d="M50 28 L30 68 L35 68 L38 62 L62 62 L65 68 L70 68 Z" 
+                  fill="#0d2847"
+                />
+                
+                {/* Letter A - Inner Triangle */}
+                <path 
+                  d="M50 38 L42 56 L58 56 Z" 
+                  fill="white"
+                />
+                
+                {/* Curved Blue Swoosh */}
+                <path 
+                  d="M28 65 Q50 75 72 65" 
+                  stroke="#1a73e8" 
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  fill="none"
+                />
+                
+                {/* Lighter Blue Accent on Swoosh */}
+                <path 
+                  d="M30 67 Q50 74 70 67" 
+                  stroke="#4da3ff" 
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  fill="none"
+                  opacity="0.6"
+                />
+              </svg>
+              
+              {/* Brand Text */}
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-white tracking-[0.15em] leading-none" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  ARVANA
+                </span>
+                <span className="text-[10px] font-medium text-slate-400 tracking-[0.25em] leading-none mt-1 uppercase">
+                  DIGITAL NUSANTARA
+                </span>
+                {/* Decorative Lines */}
+                <div className="flex items-center gap-1 mt-1.5">
+                  <div className="w-1 h-1 rounded-full bg-blue-500"></div>
+                  <div className="w-8 h-0.5 bg-slate-600"></div>
+                  <div className="w-6 h-0.5 bg-blue-500"></div>
+                  <div className="w-8 h-0.5 bg-slate-600"></div>
+                </div>
+              </div>
             </div>
-            <span className="text-xl font-bold text-white tracking-tight">
-              NEXORA<span className="text-blue-500">Techn</span>
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
