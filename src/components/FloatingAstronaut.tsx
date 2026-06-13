@@ -46,7 +46,7 @@ export default function FloatingAstronaut() {
               animate={{ opacity: 1, y: 0 }}
               className="absolute -top-1 -left-1 z-[60] bg-gradient-to-r from-blue-600 to-purple-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1 whitespace-nowrap"
             >
-              <Sparkles className="w-3 h-3" /> NEXORA TECH
+              <Sparkles className="w-3 h-3" /> ARVANA
             </motion.div>
           )}
 
@@ -102,7 +102,7 @@ export default function FloatingAstronaut() {
               >
                 <div className="text-white text-xs space-y-1 text-center">
                   <div className="font-bold text-sm flex items-center justify-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-blue-400" /> Nexora AI Assistant
+                    <Sparkles className="w-3.5 h-3.5 text-blue-400" /> Arvana Teknologi Nusantara
                   </div>
                   <div className="text-slate-400 text-[10px]">🖱️ Drag untuk rotate • Monitoring smart home 24/7</div>
                 </div>
