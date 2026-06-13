@@ -120,7 +120,7 @@ export default function DemoPage() {
             className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto"
           >
             Dapatkan demo eksklusif 30 menit dengan tim engineering kami. 
-            Lihat langsung bagaimana Nexora IoT dapat meningkatkan efisiensi energi bisnis Anda.
+            Lihat langsung bagaimana Arvana IoT dapat meningkatkan efisiensi energi bisnis Anda.
           </motion.p>
         </div>
 
@@ -399,13 +399,13 @@ export default function DemoPage() {
               <h3 className="text-lg font-bold text-white mb-4">Butuh Bantuan Cepat?</h3>
               <div className="space-y-3">
                 <a 
-                  href="mailto:hello@nexora-iot.com"
+                  href="mailto:hello@arvana-iot.com"
                   className="flex items-center gap-3 p-3 bg-slate-950 border border-slate-800 rounded-lg hover:border-blue-500/30 transition-colors"
                 >
                   <Mail className="w-5 h-5 text-blue-400" />
                   <div>
                     <div className="text-xs text-slate-500">Email</div>
-                    <div className="text-sm text-white">hello@nexora-iot.com</div>
+                    <div className="text-sm text-white">hello@arvana-iot.com</div>
                   </div>
                 </a>
                 <a 
