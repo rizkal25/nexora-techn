@@ -118,7 +118,7 @@ export default function ProductShowcase() {
           <h2 className="text-4xl sm:text-6xl font-bold text-white mb-4">
             Smart IoT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Products</span>
           </h2>
-          <p className="text-slate-400 max-w-3xl mx-auto text-lg">Perangkat IoT pilihan yang kompatibel penuh dengan sistem Nexora MCB</p>
+          <p className="text-slate-400 max-w-3xl mx-auto text-lg">Perangkat IoT pilihan yang kompatibel penuh dengan sistem Arvana MCB</p>
         </motion.div>
 
         {/* PRODUCT GRID */}
