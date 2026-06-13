@@ -27,7 +27,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
           </span>
           <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">
-            Nexora MCB IoT System v2.0
+            Arvana MCB IoT System v2.0
           </span>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function Hero() {
               </div>
               <div className="ml-4 flex-1 bg-slate-900 rounded-md h-6 flex items-center px-3 border border-slate-800">
                 <Zap className="w-3 h-3 text-blue-500 mr-2" />
-                <span className="text-xs text-slate-500 font-mono">app.nexora-iot.com/dashboard</span>
+                <span className="text-xs text-slate-500 font-mono">app.arvana-iot.com/dashboard</span>
               </div>
             </div>
             
