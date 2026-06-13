@@ -29,11 +29,11 @@ const priorityColors: Record<string, string> = {
 };
 
 export async function sendSupportTicketEmail(data: SupportTicketData) {
-  const destinationEmail = process.env.CONTACT_EMAIL_DESTINATION || "support@nexora-iot.com";
+  const destinationEmail = process.env.CONTACT_EMAIL_DESTINATION || "support@arvana-iot.com";
 
   try {
     const { data: emailData, error } = await resend.emails.send({
-      from: "Nexora Support <onboarding@resend.dev>",
+      from: "Arvana Support <onboarding@resend.dev>",
       to: [destinationEmail],
       reply_to: data.email,
       subject: `[${data.ticketNumber}] ${data.priority.toUpperCase()} - ${data.subject}`,
@@ -90,7 +90,7 @@ export async function sendSupportTicketEmail(data: SupportTicketData) {
                   data.priority === "medium" ? "< 4 jam" : "< 24 jam"}
               </p>
               <p style="color: #94a3b8; font-size: 11px; margin: 8px 0 0 0;">
-                Dikirim melalui Nexora Support System
+                Dikirim melalui Arvana Support System
               </p>
             </div>
           </div>
