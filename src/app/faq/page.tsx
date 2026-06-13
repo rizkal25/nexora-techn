@@ -28,8 +28,8 @@ const faqCategories = [
 const faqData: FAQItem[] = [
   {
     category: "product",
-    question: "Apa itu Nexora MCB IoT dan bagaimana cara kerjanya?",
-    answer: "Nexora MCB IoT adalah sistem monitoring dan kontrol Miniature Circuit Breaker (MCB) berbasis Internet of Things. Sistem ini menggabungkan sensor energi (PZEM-004T), mikrokontroler (ESP32), dan MCB pintar (Tuya TS0121) yang terintegrasi dengan Home Assistant. Data telemetry (Voltage, Current, Power, Power Factor) dikirim via MQTT ke backend Next.js kami, yang kemudian menerapkan algoritma Trapezoidal Rule untuk menghitung konsumsi energi (kWh) dengan akurasi 99.9%."
+    question: "Apa itu Arvana MCB IoT dan bagaimana cara kerjanya?",
+    answer: "Arvana MCB IoT adalah sistem monitoring dan kontrol Miniature Circuit Breaker (MCB) berbasis Internet of Things. Sistem ini menggabungkan sensor energi (PZEM-004T), mikrokontroler (ESP32), dan MCB pintar (Tuya TS0121) yang terintegrasi dengan Home Assistant. Data telemetry (Voltage, Current, Power, Power Factor) dikirim via MQTT ke backend Next.js kami, yang kemudian menerapkan algoritma Trapezoidal Rule untuk menghitung konsumsi energi (kWh) dengan akurasi 99.9%."
   },
   {
     category: "product",
@@ -38,13 +38,13 @@ const faqData: FAQItem[] = [
   },
   {
     category: "product",
-    question: "Apakah Nexora mendukung monitoring 3-phase listrik?",
-    answer: "Ya, Nexora mendukung single-phase dan 3-phase (tiga fase). Untuk 3-phase, kami menggunakan 3 modul sensor PZEM-004T yang masing-masing membaca fase R, S, dan T. Dashboard akan menampilkan data per-fase dan total agregat, termasuk unbalance analysis dan total power factor."
+    question: "Apakah Arvana mendukung monitoring 3-phase listrik?",
+    answer: "Ya, Arvana mendukung single-phase dan 3-phase (tiga fase). Untuk 3-phase, kami menggunakan 3 modul sensor PZEM-004T yang masing-masing membaca fase R, S, dan T. Dashboard akan menampilkan data per-fase dan total agregat, termasuk unbalance analysis dan total power factor."
   },
   {
     category: "product",
     question: "Berapa lama garansi hardware dan apa cakupannya?",
-    answer: "Hardware Nexora (sensor + enclosure) memiliki garansi 2 tahun yang mencakup cacat manufaktur dan kerusakan normal. Tidak mencakup kerusakan akibat bencana alam, modifikasi unauthorized, atau penggunaan di luar spesifikasi (misal: melebihi rating arus 63A). Software mendapat update gratis selamanya selama berlangganan aktif."
+    answer: "Hardware Arvana (sensor + enclosure) memiliki garansi 2 tahun yang mencakup cacat manufaktur dan kerusakan normal. Tidak mencakup kerusakan akibat bencana alam, modifikasi unauthorized, atau penggunaan di luar spesifikasi (misal: melebihi rating arus 63A). Software mendapat update gratis selamanya selama berlangganan aktif."
   },
   {
     category: "technical",
@@ -73,13 +73,13 @@ const faqData: FAQItem[] = [
   },
   {
     category: "integration",
-    question: "Apakah Nexora kompatibel dengan Home Assistant?",
-    answer: "100% kompatibel. Nexora terintegrasi native dengan Home Assistant via MQTT dan REST API. Kami menyediakan custom component HACS (Home Assistant Community Store) yang memudahkan instalasi. Semua entity (sensor, switch, binary_sensor) otomatis ter-discovery dan bisa digunakan di Lovelace dashboard, automations, dan scripts."
+    question: "Apakah Arvana kompatibel dengan Home Assistant?",
+    answer: "100% kompatibel. Arvana terintegrasi native dengan Home Assistant via MQTT dan REST API. Kami menyediakan custom component HACS (Home Assistant Community Store) yang memudahkan instalasi. Semua entity (sensor, switch, binary_sensor) otomatis ter-discovery dan bisa digunakan di Lovelace dashboard, automations, dan scripts."
   },
   {
     category: "integration",
     question: "Bisa integrasi dengan Google Home atau Alexa?",
-    answer: "Ya, melalui Home Assistant. Setelah Nexora terintegrasi dengan Home Assistant, Anda bisa expose entity ke Google Home via Google Cast integration atau ke Alexa via Home Assistant Cloud (Nabu Casa). Anda bisa kontrol relay via voice command: 'Hey Google, turn off server room MCB'."
+    answer: "Ya, melalui Home Assistant. Setelah Arvana terintegrasi dengan Home Assistant, Anda bisa expose entity ke Google Home via Google Cast integration atau ke Alexa via Home Assistant Cloud (Nabu Casa). Anda bisa kontrol relay via voice command: 'Hey Google, turn off server room MCB'."
   },
   {
     category: "integration",
@@ -88,7 +88,7 @@ const faqData: FAQItem[] = [
   },
   {
     category: "security",
-    question: "Bagaimana keamanan data saya di Nexora?",
+    question: "Bagaimana keamanan data saya di Arvana?",
     answer: "Kami menerapkan security by design: (1) Semua data dienkripsi AES-256 at-rest dan TLS 1.3 in-transit, (2) Autentikasi menggunakan JWT dengan refresh token rotation, (3) Rate limiting per IP dan per user untuk mencegah brute-force, (4) Input validation ketat dengan Zod di setiap endpoint, (5) Audit logging untuk setiap aksi kritis, (6) Regular penetration testing oleh pihak ketiga."
   },
   {
@@ -99,7 +99,7 @@ const faqData: FAQItem[] = [
   {
     category: "security",
     question: "Bagaimana jika saya lupa password atau akun di-hack?",
-    answer: "Kami menyediakan fitur Self-Service Password Reset via email verifikasi. Jika akun di-hack, segera hubungi support@nexora-iot.com atau WhatsApp darurat +62 812 3456 7890. Tim security kami akan: (1) revoke semua session aktif, (2) force password reset, (3) audit log aktivitas mencurigakan, (4) enable 2FA wajib jika belum aktif."
+    answer: "Kami menyediakan fitur Self-Service Password Reset via email verifikasi. Jika akun di-hack, segera hubungi support@arvana-iot.com atau WhatsApp darurat +62 812 3456 7890. Tim security kami akan: (1) revoke semua session aktif, (2) force password reset, (3) audit log aktivitas mencurigakan, (4) enable 2FA wajib jika belum aktif."
   },
   {
     category: "billing",
@@ -152,7 +152,7 @@ export default function FAQPage() {
             Pertanyaan yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Sering Diajukan</span>
           </h1>
           <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Temukan jawaban untuk pertanyaan umum seputar produk, teknis, integrasi, keamanan, dan billing Nexora IoT.
+            Temukan jawaban untuk pertanyaan umum seputar produk, teknis, integrasi, keamanan, dan billing Arvana IoT.
           </p>
         </div>
 
