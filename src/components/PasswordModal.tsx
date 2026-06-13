@@ -18,7 +18,7 @@ export default function PasswordModal({ isOpen, onClose, onSuccess, targetUrl }:
   const [isLoading, setIsLoading] = useState(false);
 
   // Password yang benar (bisa Anda ganti sesuai keinginan)
-  const CORRECT_PASSWORD = "nexora2026";
+  const CORRECT_PASSWORD = "arvana2026";
 
   // Reset state saat modal ditutup
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function PasswordModal({ isOpen, onClose, onSuccess, targetUrl }:
     setTimeout(() => {
       if (password === CORRECT_PASSWORD) {
         // Simpan status unlock di sessionStorage
-        sessionStorage.setItem("nexora-dev-unlocked", "true");
+        sessionStorage.setItem("arvana-dev-unlocked", "true");
         onSuccess();
         onClose();
       } else {
