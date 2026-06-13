@@ -132,7 +132,7 @@ export default function Astronaut3D() {
             <meshBasicMaterial color="#f59e0b" />
           </mesh>
 
-          {/* Nexora Logo (Garis horizontal) */}
+          {/* Arvana Logo (Garis horizontal) */}
           <mesh position={[0, 0, 0.35]}>
             <planeGeometry args={[0.3, 0.02]} />
             <meshBasicMaterial color="#3b82f6" />
