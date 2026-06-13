@@ -47,7 +47,7 @@ export default function DeepDive() {
           </h2>
           <p className="text-slate-400 max-w-3xl mx-auto text-lg">
             Ketika data sensor kumulatif mengalami "stuck" atau packet loss, penjumlahan sederhana akan menghasilkan error yang besar. 
-            Nexora mengimplementasikan integrasi numerik Trapezoidal untuk menjaga akurasi kWh tetap di atas 99%.
+            Arvana mengimplementasikan integrasi numerik Trapezoidal untuk menjaga akurasi kWh tetap di atas 99%.
           </p>
         </motion.div>
 
