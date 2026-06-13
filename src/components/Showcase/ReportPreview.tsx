@@ -29,7 +29,7 @@ export default function ReportPreview() {
         <div className="border-b-2 border-slate-900 pb-2 mb-3">
           <div className="flex items-center justify-between">
             <div>
-              <div className="text-[8px] font-bold text-slate-900">PT NEXORA TEKNOLOGI</div>
+              <div className="text-[8px] font-bold text-slate-900">Arvana Digital Nusantara</div>
               <div className="text-[6px] text-slate-600">Engineering Division</div>
             </div>
             <div className="text-right">
