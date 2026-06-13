@@ -8,7 +8,7 @@ import {
 import Link from "next/link";
 
 // Password yang dibutuhkan (sebaiknya simpan di environment variable)
-const ACCESS_PASSWORD = "nexora2026";
+const ACCESS_PASSWORD = "arvana2026";
 
 export default function DocsPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -18,7 +18,7 @@ export default function DocsPage() {
 
   // Cek apakah sudah login dari session storage
   useEffect(() => {
-    const auth = sessionStorage.getItem("nexora_docs_auth");
+    const auth = sessionStorage.getItem("arvana_docs_auth");
     if (auth === "true") {
       setIsAuthenticated(true);
     }
@@ -29,7 +29,7 @@ export default function DocsPage() {
     e.preventDefault();
     if (password === ACCESS_PASSWORD) {
       setIsAuthenticated(true);
-      sessionStorage.setItem("nexora_docs_auth", "true");
+      sessionStorage.setItem("arvana_docs_auth", "true");
       setError("");
     } else {
       setError("Password salah! Silakan coba lagi.");
@@ -39,7 +39,7 @@ export default function DocsPage() {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    sessionStorage.removeItem("nexora_docs_auth");
+    sessionStorage.removeItem("arvana_docs_auth");
     setPassword("");
   };
 
@@ -110,7 +110,7 @@ export default function DocsPage() {
             <div className="mt-6 pt-6 border-t border-slate-800 text-center">
               <p className="text-xs text-slate-500">
                 Butuh akses? Hubungi tim{" "}
-                <span className="text-emerald-400 font-medium">Nexora Techn</span>
+                <span className="text-emerald-400 font-medium">Arvana</span>
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ export default function DocsPage() {
             API <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">Documentation</span>
           </h1>
           <p className="text-lg text-slate-400 leading-relaxed max-w-3xl">
-            Bangun integrasi powerful dengan Nexora IoT Platform. Dokumentasi lengkap untuk REST API, 
+            Bangun integrasi powerful dengan Arvana IoT Platform. Dokumentasi lengkap untuk REST API, 
             SDK, Webhooks, dan contoh implementasi.
           </p>
           
@@ -230,7 +230,7 @@ export default function DocsPage() {
               </div>
               <div className="prose prose-invert max-w-none">
                 <p className="text-slate-400 leading-relaxed mb-4">
-                  Nexora IoT Platform menyediakan RESTful API yang memungkinkan Anda mengintegrasikan 
+                  Arvana IoT Platform menyediakan RESTful API yang memungkinkan Anda mengintegrasikan 
                   monitoring dan kontrol device IoT ke dalam aplikasi Anda sendiri. API kami dirancang 
                   dengan prinsip:
                 </p>
@@ -254,7 +254,7 @@ export default function DocsPage() {
                 <div className="p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl">
                   <p className="text-sm text-slate-300">
                     <strong className="text-white">Base URL:</strong>{" "}
-                    <code className="bg-slate-900 px-2 py-0.5 rounded text-blue-400 font-mono">https://api.nexora-iot.com/v2</code>
+                    <code className="bg-slate-900 px-2 py-0.5 rounded text-blue-400 font-mono">https://api.arvana-iot.com/v2</code>
                   </p>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export default function DocsPage() {
                 <h3 className="text-xl font-bold text-white">1. Dapatkan Token</h3>
                 <CodeBlock
                   language="bash"
-                  code={`curl -X POST https://api.nexora-iot.com/v2/auth/login \\
+                  code={`curl -X POST https://api.arvana-iot.com/v2/auth/login \\
   -H "Content-Type: application/json" \\
   -d '{
     "email": "user@example.com",
@@ -285,7 +285,7 @@ export default function DocsPage() {
                 <h3 className="text-xl font-bold text-white mt-8">2. Gunakan Token</h3>
                 <CodeBlock
                   language="bash"
-                  code={`curl -X GET https://api.nexora-iot.com/v2/mcb-machines \\
+                  code={`curl -X GET https://api.arvana-iot.com/v2/mcb-machines \\
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \\
   -H "Content-Type: application/json"`}
                 />
@@ -318,14 +318,14 @@ export default function DocsPage() {
                   language="javascript"
                   title="Node.js Example"
                   code={`// Install SDK
-// npm install @nexora/iot-sdk
+// npm install @arvana/iot-sdk
 
-const { NexoraClient } = require('@nexora/iot-sdk');
+const { ArvanaClient } = require('@arvana/iot-sdk');
 
 // Initialize client
-const client = new NexoraClient({
-  apiKey: process.env.NEXORA_API_KEY,
-  baseUrl: 'https://api.nexora-iot.com/v2'
+const client = new ArvanaClient({
+  apiKey: process.env.ARVANA_API_KEY,
+  baseUrl: 'https://api.arvana-iot.com/v2'
 });
 
 // Get all MCB machines
@@ -362,14 +362,14 @@ getMachines();`}
                   language="python"
                   title="Python Example"
                   code={`# Install SDK
-# pip install nexora-iot
+# pip install arvana-iot
 
-from nexora import NexoraClient
+from arvana import ArvanaClient
 
 # Initialize client
-client = NexoraClient(
+client = ArvanaClient(
     api_key="YOUR_API_KEY",
-    base_url="https://api.nexora-iot.com/v2"
+    base_url="https://api.arvana-iot.com/v2"
 )
 
 # Get all machines
@@ -490,12 +490,12 @@ print(f"Device turned {result.status}")`}
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
-                  { lang: "Node.js", pkg: "npm install @nexora/iot-sdk", color: "from-green-500 to-emerald-500", status: "Stable" },
-                  { lang: "Python", pkg: "pip install nexora-iot", color: "from-blue-500 to-cyan-500", status: "Stable" },
-                  { lang: "PHP", pkg: "composer require nexora/iot", color: "from-purple-500 to-pink-500", status: "Stable" },
-                  { lang: "Go", pkg: "go get github.com/nexora/iot-go", color: "from-cyan-500 to-blue-500", status: "Beta" },
-                  { lang: "Java", pkg: "implementation 'com.nexora:iot:2.2.0'", color: "from-orange-500 to-red-500", status: "Beta" },
-                  { lang: "Ruby", pkg: "gem install nexora-iot", color: "from-red-500 to-rose-500", status: "Alpha" },
+                  { lang: "Node.js", pkg: "npm install @arvana/iot-sdk", color: "from-green-500 to-emerald-500", status: "Stable" },
+                  { lang: "Python", pkg: "pip install arvana-iot", color: "from-blue-500 to-cyan-500", status: "Stable" },
+                  { lang: "PHP", pkg: "composer require arvana/iot", color: "from-purple-500 to-pink-500", status: "Stable" },
+                  { lang: "Go", pkg: "go get github.com/arvana/iot-go", color: "from-cyan-500 to-blue-500", status: "Beta" },
+                  { lang: "Java", pkg: "implementation 'com.arvana:iot:2.2.0'", color: "from-orange-500 to-red-500", status: "Beta" },
+                  { lang: "Ruby", pkg: "gem install arvana-iot", color: "from-red-500 to-rose-500", status: "Alpha" },
                 ].map((sdk, i) => (
                   <div key={i} className="p-4 bg-slate-900/50 border border-slate-800 rounded-xl hover:border-slate-700 transition-colors">
                     <div className="flex items-center justify-between mb-3">
