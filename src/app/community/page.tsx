@@ -13,7 +13,7 @@ const channels = [
     icon: MessageCircle,
     name: "Discord Server",
     members: "2,847",
-    description: "Diskusi real-time dengan engineer dan pengguna Nexora. Channel khusus untuk troubleshooting, feature request, dan networking.",
+    description: "Diskusi real-time dengan engineer dan pengguna Arvana. Channel khusus untuk troubleshooting, feature request, dan networking.",
     color: "from-indigo-500 to-purple-500",
     cta: "Join Discord",
     href: "https://discord.com",
@@ -53,7 +53,7 @@ const channels = [
 
 const events = [
   {
-    title: "Nexora Tech Talk: Deep Dive Trapezoidal Algorithm",
+    title: "Arvana Tech Talk: Deep Dive Trapezoidal Algorithm",
     date: "15 Juni 2026",
     time: "19:00 WIB",
     type: "Webinar",
