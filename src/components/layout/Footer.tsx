@@ -55,7 +55,7 @@ export default function Footer() {
                 <Zap className="w-5 h-5 text-white" fill="white" />
               </div>
               <span className="text-xl font-bold text-white">
-                NEXORA<span className="text-blue-500">Techn</span>
+                ARVANA<span className="text-blue-500"> Tech</span>
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
@@ -164,7 +164,7 @@ export default function Footer() {
             </div>
             <div>
               <div className="text-xs text-slate-500">Email</div>
-              <a href="mailto:hello@nexora-iot.com" className="text-sm text-white font-medium hover:text-blue-400 transition-colors">hello@nexora-iot.com</a>
+              <a href="mailto:hello@arvana-iot.com" className="text-sm text-white font-medium hover:text-blue-400 transition-colors">hello@arvana-iot.com</a>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -199,7 +199,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-slate-500 text-center md:text-left">
-            © {currentYear} Nexora IoT Systems. All rights reserved. Made with ❤️ in Indonesia.
+            © {currentYear} Arvana IoT Systems. All rights reserved. Made with ❤️ in Indonesia.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-xs text-slate-500 hover:text-white transition-colors">Privacy</Link>
