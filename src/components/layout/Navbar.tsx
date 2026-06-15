@@ -18,7 +18,7 @@ export default function Navbar() {
   });
 
   const navLinks = [
-    { name: "Solusi", href: "/#solusi" },
+    { name: "Arsitektur", href: "/#solusi" },
     { name: "Produk", href: "/#produk" },
     { name: "Fitur", href: "/#fitur" },
     { name: "Galeri", href: "/#galeri" },
