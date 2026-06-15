@@ -128,7 +128,7 @@ const faqData: FAQItem[] = [
   {
     category: "security",
     question: "Bagaimana jika saya lupa password atau akun di-hack?",
-    answer: "Kami menyediakan fitur Self-Service Password Reset via email verifikasi. Jika akun di-hack, segera hubungi support@arvana-iot.com atau WhatsApp darurat +62 812 3456 7890. Tim security kami akan: (1) revoke semua session aktif, (2) force password reset, (3) audit log aktivitas mencurigakan, (4) enable 2FA wajib jika belum aktif."
+    answer: "Kami menyediakan fitur Self-Service Password Reset via email verifikasi. Jika akun di-hack, segera hubungi support@arvana-iot.com atau WhatsApp darurat +62 812 2126 9421. Tim security kami akan: (1) revoke semua session aktif, (2) force password reset, (3) audit log aktivitas mencurigakan, (4) enable 2FA wajib jika belum aktif."
   },
 
 
