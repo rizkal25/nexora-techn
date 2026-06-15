@@ -55,7 +55,7 @@ export default function Footer() {
                 <Zap className="w-5 h-5 text-white" fill="white" />
               </div>
               <span className="text-xl font-bold text-white">
-                ARVANA<span className="text-blue-500"> Tech</span>
+                ARVANA<span className="text-blue-500"> Digital Nusantara</span>
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
@@ -173,7 +173,7 @@ export default function Footer() {
             </div>
             <div>
               <div className="text-xs text-slate-500">Telepon / WhatsApp</div>
-              <a href="tel:+6281234567890" className="text-sm text-white font-medium hover:text-blue-400 transition-colors">+62 812 3456 7890</a>
+              <a href="tel:+6281221269421" className="text-sm text-white font-medium hover:text-blue-400 transition-colors">+62 812-2126-9421</a>
             </div>
           </div>
         </div>
