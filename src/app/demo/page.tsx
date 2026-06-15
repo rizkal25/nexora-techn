@@ -409,7 +409,7 @@ export default function DemoPage() {
                   </div>
                 </a>
                 <a 
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/6281221269421"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 bg-slate-950 border border-slate-800 rounded-lg hover:border-emerald-500/30 transition-colors"
@@ -417,7 +417,7 @@ export default function DemoPage() {
                   <Phone className="w-5 h-5 text-emerald-400" />
                   <div>
                     <div className="text-xs text-slate-500">WhatsApp</div>
-                    <div className="text-sm text-white">+62 812 3456 7890</div>
+                    <div className="text-sm text-white">+62 812 2126 9421</div>
                   </div>
                 </a>
               </div>
