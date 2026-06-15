@@ -95,7 +95,7 @@ export default function SupportPage() {
         window.location.href = "mailto:support@arvana-iot.com?subject=Support Request";
         break;
       case "whatsapp":
-        window.open("https://wa.me/6281234567890?text=Halo%20Arvana%20Support,%20saya%20butuh%20bantuan", "_blank");
+        window.open("https://wa.me/6281221269421?text=Halo%20Arvana%20Support,%20saya%20butuh%20bantuan", "_blank");
         break;
       case "ticket":
         document.getElementById("ticket-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -530,7 +530,7 @@ export default function SupportPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                      WhatsApp: <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">+62 812 3456 7890</a>
+                      WhatsApp: <a href="https://wa.me/6281221269421" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">+62 812 2126 9521</a>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 bg-blue-400 rounded-full" />
@@ -541,7 +541,7 @@ export default function SupportPage() {
 
                 <div className="flex gap-2">
                   <a
-                    href="https://wa.me/6281234567890"
+                    href="https://wa.me/6281221269421"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-lg transition-colors text-center"
