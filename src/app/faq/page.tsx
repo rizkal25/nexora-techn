@@ -5,10 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { 
   Search, ChevronDown, HelpCircle, MessageCircle, 
   Zap, Shield, Cpu, Code, Database, Home, 
-  FileText, Lock, Wifi, AlertCircle, Users
+  FileText, Lock, Wifi, AlertCircle, Users, Lightbulb, Building2
 } from "lucide-react";
 import Link from "next/link";
-import type { Metadata } from "next";
 
 interface FAQItem {
   question: string;
@@ -17,19 +16,21 @@ interface FAQItem {
 }
 
 const faqCategories = [
-  { id: "all", name: "Semua", icon: HelpCircle, count: 18 },
+  { id: "all", name: "Semua", icon: HelpCircle, count: 21 },
   { id: "product", name: "Produk", icon: Zap, count: 4 },
-  { id: "technical", name: "Teknis", icon: Cpu, count: 5 },
+  { id: "needs", name: "Kebutuhan", icon: Lightbulb, count: 5 },
+  { id: "technical", name: "Teknis", icon: Cpu, count: 4 },
   { id: "integration", name: "Integrasi", icon: Home, count: 3 },
   { id: "security", name: "Keamanan", icon: Shield, count: 3 },
   { id: "billing", name: "Billing", icon: FileText, count: 3 },
 ];
 
 const faqData: FAQItem[] = [
+  // ==================== PRODUCT ====================
   {
     category: "product",
     question: "Apa itu Arvana MCB IoT dan bagaimana cara kerjanya?",
-    answer: "Arvana MCB IoT adalah sistem monitoring dan kontrol Miniature Circuit Breaker (MCB) berbasis Internet of Things. Sistem ini menggabungkan sensor energi (PZEM-004T), mikrokontroler (ESP32), dan MCB pintar (Tuya TS0121) yang terintegrasi dengan Home Assistant. Data telemetry (Voltage, Current, Power, Power Factor) dikirim via MQTT ke backend Next.js kami, yang kemudian menerapkan algoritma Trapezoidal Rule untuk menghitung konsumsi energi (kWh) dengan akurasi 99.9%."
+    answer: "Arvana MCB IoT adalah sistem monitoring dan kontrol listrik berbasis Internet of Things yang menggunakan Smart MCB dan Smart Switch. Perangkat ini memiliki fitur built-in metering (Class 1) untuk membaca Tegangan (V), Arus (A), Daya (W), dan Energi (kWh) secara real-time. Sistem terintegrasi penuh dengan Home Assistant melalui protokol lokal (LocalTuya), sehingga Anda bisa mengontrol dan memantau listrik dari mana saja tanpa bergantung pada cloud."
   },
   {
     category: "product",
@@ -39,42 +40,68 @@ const faqData: FAQItem[] = [
   {
     category: "product",
     question: "Apakah Arvana mendukung monitoring 3-phase listrik?",
-    answer: "Ya, Arvana mendukung single-phase dan 3-phase (tiga fase). Untuk 3-phase, kami menggunakan 3 modul sensor PZEM-004T yang masing-masing membaca fase R, S, dan T. Dashboard akan menampilkan data per-fase dan total agregat, termasuk unbalance analysis dan total power factor."
+    answer: "Ya, kami menyediakan Smart MCB untuk 1-Phase (hingga 63A) dan 3-Phase. Untuk 3-Phase, dashboard Arvana akan menampilkan data agregat dari ketiga fase secara real-time, termasuk total daya, arus per-fase, dan keseimbangan beban (unbalance analysis)."
   },
   {
     category: "product",
     question: "Berapa lama garansi hardware dan apa cakupannya?",
-    answer: "Hardware Arvana (sensor + enclosure) memiliki garansi 2 tahun yang mencakup cacat manufaktur dan kerusakan normal. Tidak mencakup kerusakan akibat bencana alam, modifikasi unauthorized, atau penggunaan di luar spesifikasi (misal: melebihi rating arus 63A). Software mendapat update gratis selamanya selama berlangganan aktif."
+    answer: "Smart MCB dan Smart Switch memiliki garansi 1 tahun yang mencakup cacat manufaktur dan kerusakan normal. Tidak mencakup kerusakan akibat bencana alam, modifikasi unauthorized, atau penggunaan di luar spesifikasi (misal: melebihi rating arus 63A). Software mendapat update gratis selamanya selama berlangganan aktif."
+  },
+
+  // ==================== KEBUTUHAN CUSTOMER ====================
+  {
+    category: "needs",
+    question: "Bagaimana cara menentukan kapasitas MCB yang sesuai untuk rumah/kantor saya?",
+    answer: "Untuk rumah tangga standar (1-2 AC, kulkas, TV, lampu), kami merekomendasikan Smart MCB 32A-40A. Untuk kantor kecil atau rumah dengan banyak peralatan elektronik, gunakan 50A-63A. Untuk industri atau gedung komersial dengan beban tinggi, kami menyediakan versi 3-Phase hingga 100A. Tim kami bisa membantu survey beban listrik Anda secara gratis."
   },
   {
+    category: "needs",
+    question: "Apakah Smart MCB bisa digunakan untuk mengontrol AC, water heater, atau peralatan daya tinggi?",
+    answer: "Ya, Smart MCB kami dirancang untuk menangani beban tinggi hingga 63A (sekitar 14.000 Watt pada 220V). Ini cukup untuk mengontrol AC 2 PK, water heater, mesin cuci, hingga server rack. Untuk peralatan dengan starting current tinggi (seperti motor induksi), kami merekomendasikan penggunaan MCB dengan rating 20% lebih tinggi dari beban normal."
+  },
+  {
+    category: "needs",
+    question: "Apakah ada fitur untuk monitoring dan penghematan energi?",
+    answer: "Ya, Arvana menyediakan fitur lengkap untuk penghematan energi: (1) Real-time monitoring konsumsi daya per-sirkuit, (2) Historical data hingga 1 tahun untuk analisis tren, (3) Engineering Report bulanan yang menunjukkan peralatan paling boros, (4) Fitur scheduling untuk mematikan perangkat otomatis di jam tertentu, (5) Alert jika konsumsi melebihi threshold yang ditentukan."
+  },
+  {
+    category: "needs",
+    question: "Apakah sistem ini cocok untuk kost, kontrakan, atau gedung komersial?",
+    answer: "Sangat cocok! Untuk kost/kontrakan, Anda bisa memasang Smart MCB di setiap kamar untuk monitoring dan pembatasan daya per-penyewa. Versi Enterprise mendukung multi-tenant, sehingga Anda bisa mengelola ratusan kamar dari satu dashboard. Fitur auto-cut off juga bisa mencegah penyewa menggunakan daya melebihi kapasitas yang ditentukan."
+  },
+  {
+    category: "needs",
+    question: "Bagaimana jika saya ingin mengontrol beberapa perangkat sekaligus?",
+    answer: "Arvana mendukung kontrol grup (group control). Anda bisa mengelompokkan beberapa Smart MCB/Switch dalam satu grup (misal: 'Lantai 1', 'Ruang Server', 'Semua AC') dan mengontrol mereka bersamaan dengan satu klik. Fitur ini sangat berguna untuk skenario seperti 'Matikan semua lampu saat tidur' atau 'Aktifkan mode hemat energi'."
+  },
+
+  // ==================== TECHNICAL ====================
+  {
     category: "technical",
-    question: "Bagaimana algoritma Trapezoidal Rule meningkatkan akurasi perhitungan kWh?",
-    answer: "Ketika sensor mengalami packet loss atau data stuck, metode konvensional (Riemann Sum) akan menghasilkan error besar. Trapezoidal Rule menginterpolasi data yang hilang dengan menghitung luas area di bawah kurva daya-waktu menggunakan pendekatan trapesium: Energy = (P1 + P2)/2 × Δt. Hasil benchmark kami menunjukkan error rate turun dari 8-12% (Riemann) menjadi <0.1% (Trapezoidal) pada kondisi jaringan tidak stabil."
+    question: "Seberapa akurat pembacaan kWh pada Smart MCB?",
+    answer: "Smart MCB yang kami gunakan memiliki sertifikasi Class 1 (IEC 62053-21) untuk metering energi, yang berarti tingkat akurasinya sangat tinggi dengan error < 1%. Karena pembacaan dilakukan langsung oleh chip metering bawaan di dalam MCB (bukan sensor eksternal), data yang ditampilkan di dashboard Arvana adalah data murni dari perangkat dengan latensi yang sangat minim."
   },
   {
     category: "technical",
     question: "Apa yang terjadi jika koneksi internet mati?",
-    answer: "Sistem kami dirancang dengan prinsip 'local-first'. Jika internet mati, Home Assistant tetap berfungsi lokal via MQTT broker (Mosquitto). Data sensor disimpan di buffer lokal ESP32 (hingga 24 jam) dan di InfluxDB lokal. Saat koneksi pulih, data akan di-sync ke cloud PostgreSQL kami. Kontrol relay tetap berfungsi via automasi lokal Home Assistant."
+    answer: "Sistem kami dirancang dengan prinsip 'local-first'. Jika internet mati, Home Assistant tetap berfungsi 100% melalui jaringan lokal (LAN) menggunakan integrasi LocalTuya. Semua automasi, kontrol relay, dan pencatatan data ke database lokal tetap berjalan normal. Saat koneksi internet pulih, data akan di-sync ke cloud (jika Anda menggunakan versi cloud)."
   },
   {
     category: "technical",
-    question: "Berapa latensi dari sensor ke dashboard?",
-    answer: "Untuk koneksi lokal (LAN), latensi end-to-end adalah 50-150ms. Untuk koneksi cloud (via internet), latensi rata-rata 200-400ms tergantung lokasi server dan kualitas jaringan. Kami menggunakan WebSocket untuk push notification real-time, sehingga dashboard update tanpa perlu refresh manual."
+    question: "Berapa latensi dari perintah di dashboard ke relay MCB?",
+    answer: "Karena Arvana menggunakan kontrol lokal (LocalTuya via Home Assistant), latensi untuk perintah ON/OFF relay di jaringan LAN adalah di bawah 100ms. Untuk pembaruan data sensor (Voltage, Current, Power) di dashboard, polling rate dapat dikonfigurasi (default 5-10 detik) untuk menjaga kestabilan jaringan lokal."
   },
   {
     category: "technical",
     question: "Apakah saya bisa menggunakan database sendiri?",
     answer: "Ya, untuk versi Enterprise, kami mendukung deployment on-premise dengan database pilihan Anda: PostgreSQL (default), TimescaleDB (untuk time-series optimal), atau InfluxDB. Kami menyediakan Docker Compose dan Helm charts untuk Kubernetes deployment. Tim engineering kami akan membantu migrasi dan setup."
   },
-  {
-    category: "technical",
-    question: "Bagaimana mekanisme fallback saat sensor stuck?",
-    answer: "Sistem kami memiliki 3 layer fallback: (1) Interpolasi linear berdasarkan data historis 1 jam terakhir, (2) Penggunaan rata-rata beban pada jam yang sama di hari-hari sebelumnya, (3) Flagging data sebagai 'estimated' di Engineering Report sehingga auditor tahu data tersebut adalah estimasi, bukan pengukuran langsung."
-  },
+
+  // ==================== INTEGRATION ====================
   {
     category: "integration",
     question: "Apakah Arvana kompatibel dengan Home Assistant?",
-    answer: "100% kompatibel. Arvana terintegrasi native dengan Home Assistant via MQTT dan REST API. Kami menyediakan custom component HACS (Home Assistant Community Store) yang memudahkan instalasi. Semua entity (sensor, switch, binary_sensor) otomatis ter-discovery dan bisa digunakan di Lovelace dashboard, automations, dan scripts."
+    answer: "100% kompatibel. Arvana terintegrasi native dengan Home Assistant via LocalTuya dan REST API. Semua entity (sensor, switch, binary_sensor) otomatis ter-discovery dan bisa digunakan di Lovelace dashboard, automations, dan scripts. Kami juga menyediakan dokumentasi lengkap untuk konfigurasi advanced."
   },
   {
     category: "integration",
@@ -86,10 +113,12 @@ const faqData: FAQItem[] = [
     question: "Apakah ada webhook untuk integrasi dengan sistem lain?",
     answer: "Ya, kami menyediakan webhook untuk event-event kritis: relay ON/OFF, threshold alert (overvoltage, overcurrent), dan daily report generation. Anda bisa konfigurasi webhook URL di dashboard, dan kami akan kirim POST request dengan payload JSON. Dokumentasi lengkap tersedia di /docs/webhooks."
   },
+
+  // ==================== SECURITY ====================
   {
     category: "security",
     question: "Bagaimana keamanan data saya di Arvana?",
-    answer: "Kami menerapkan security by design: (1) Semua data dienkripsi AES-256 at-rest dan TLS 1.3 in-transit, (2) Autentikasi menggunakan JWT dengan refresh token rotation, (3) Rate limiting per IP dan per user untuk mencegah brute-force, (4) Input validation ketat dengan Zod di setiap endpoint, (5) Audit logging untuk setiap aksi kritis, (6) Regular penetration testing oleh pihak ketiga."
+    answer: "Kami menerapkan security by design: (1) Semua data dienkripsi AES-256 at-rest dan TLS 1.3 in-transit, (2) Autentikasi menggunakan JWT dengan refresh token rotation, (3) Rate limiting per IP dan per user untuk mencegah brute-force, (4) Input validation ketat dengan Zod di setiap endpoint, (5) Audit logging untuk setiap aksi kritis, (6) Kontrol lokal berarti data sensitif tidak perlu keluar dari jaringan Anda."
   },
   {
     category: "security",
@@ -101,11 +130,8 @@ const faqData: FAQItem[] = [
     question: "Bagaimana jika saya lupa password atau akun di-hack?",
     answer: "Kami menyediakan fitur Self-Service Password Reset via email verifikasi. Jika akun di-hack, segera hubungi support@arvana-iot.com atau WhatsApp darurat +62 812 3456 7890. Tim security kami akan: (1) revoke semua session aktif, (2) force password reset, (3) audit log aktivitas mencurigakan, (4) enable 2FA wajib jika belum aktif."
   },
-  {
-    category: "billing",
-    question: "Apakah ada free trial?",
-    answer: "Ya, kami menyediakan free trial 14 hari untuk versi Professional tanpa perlu kartu kredit. Anda mendapat akses penuh ke semua fitur, termasuk engineering report dan scheduling. Setelah trial, Anda bisa downgrade ke versi Basic (gratis selamanya, 5 device) atau upgrade ke Professional/Enterprise."
-  },
+
+
   {
     category: "billing",
     question: "Metode pembayaran apa yang diterima?",
@@ -152,7 +178,7 @@ export default function FAQPage() {
             Pertanyaan yang <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Sering Diajukan</span>
           </h1>
           <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Temukan jawaban untuk pertanyaan umum seputar produk, teknis, integrasi, keamanan, dan billing Arvana IoT.
+            Temukan jawaban untuk pertanyaan umum seputar produk, kebutuhan, teknis, integrasi, keamanan, dan billing Arvana IoT.
           </p>
         </div>
 
@@ -164,7 +190,7 @@ export default function FAQPage() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari pertanyaan... (misal: 'trapezoidal', 'Home Assistant', 'refund')"
+              placeholder="Cari pertanyaan... (misal: 'kapasitas MCB', 'Home Assistant', 'refund')"
               className="w-full pl-12 pr-4 py-4 bg-slate-900 border border-slate-800 rounded-2xl text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
             />
           </div>
@@ -288,36 +314,6 @@ export default function FAQPage() {
             })
           )}
         </div>
-
-        {/* Still Need Help CTA
-        <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-gradient-to-br from-blue-950/50 to-purple-950/50 border border-blue-500/20 rounded-3xl p-8 md:p-12 text-center">
-            <MessageCircle className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Masih Punya Pertanyaan?
-            </h2>
-            <p className="text-slate-400 mb-8 max-w-xl mx-auto">
-              Tim support kami siap membantu 24/7. Response time rata-rata kurang dari 2 jam di hari kerja.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link 
-                href="/support"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/20"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Submit Ticket
-              </Link>
-              <Link 
-                href="/community"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl border border-slate-700 transition-all"
-              >
-                <Users className="w-4 h-4" />
-                Tanya di Community
-              </Link>
-            </div>
-          </div>
-        </div> */}
-
       </div>
     </main>
   );
